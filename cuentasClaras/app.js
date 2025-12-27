@@ -1,23 +1,8 @@
-/* --------- PROBLEMA ------------ */  
-
-/* 
-- amigos salen a comprar insumos para una fiesta. 
-
-Juan (voluntario1 ) compra bebidas y comida. En total gasta $50.000. ( parteVoluntaria1 )
-
-Pero Nacho (voluntario2) trae tambien hielo y bebidas. Dice que gasto $25.000 ( parteVoluntaria2 )
-
-En total gastaron $75.000.
-
-----------------------------------------------------------
-*/
-
-
 let gastoTotal
 let participantes
 let voluntarios = [ ]
 
-function gastos ( ) {
+function participantesyGastos ( ) {
     gastoTotal = parseInt( prompt('Cuánto dinero gastaron?') )
     participantes = parseInt( prompt('Cuántos son?') )
 
@@ -29,10 +14,10 @@ function gastos ( ) {
 
 
 
-const addVoluntario = ( ) => {  
+const añadirVoluntario = ( ) => {  
     let nombre
     let dinero
-    let masVoluntarios = true;
+    let masVoluntarios = true
     
     do {
         nombre = prompt( "¿Quién prestó dinero?" )
@@ -57,7 +42,7 @@ const addVoluntario = ( ) => {
             voluntarios.push({ nombre, dinero });
             masVoluntarios = confirm( '¿Agregar mas voluntarios?' )
         
-        } while ( masVoluntarios === true && voluntarios.length <= participantes );
+        } while ( masVoluntarios && voluntarios.length <= participantes );
         
         console.log( voluntarios )
         return voluntarios;
@@ -65,7 +50,7 @@ const addVoluntario = ( ) => {
     
 
     
-    const deudas = ( ) => {
+    const parteDeCadaUsuario = ( ) => {
         let partes = gastoTotal / participantes
         let partesFix = partes.toFixed(2)
         alert( `Cada uno gastó $${ partesFix }` )
@@ -92,6 +77,7 @@ const addVoluntario = ( ) => {
 }
 
 
-gastos( );
-addVoluntario( );
-deudas( );
+participantesyGastos( );
+añadirVoluntario( );
+parteDeCadaUsuario( );
+
