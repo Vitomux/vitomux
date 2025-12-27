@@ -8,8 +8,7 @@ function participantesyGastos ( ) {
 
     console.log(`${participantes} personas`);
     console.log(`Total = $${gastoTotal}`);
-    
-    return participantes
+
 }
 
 
@@ -80,4 +79,5 @@ const añadirVoluntario = ( ) => {
 participantesyGastos( );
 añadirVoluntario( );
 parteDeCadaUsuario( );
+
 
