@@ -2,7 +2,7 @@ let gastoTotal
 let participantes
 let voluntarios = [ ]
 
-function participantesyGastos ( ) {
+function init( ) {
     gastoTotal = parseInt( prompt('Cuánto dinero gastaron?') )
     participantes = parseInt( prompt('Cuántos son?') )
 
@@ -76,8 +76,9 @@ const añadirVoluntario = ( ) => {
 }
 
 
-participantesyGastos( );
+init( );
 añadirVoluntario( );
 parteDeCadaUsuario( );
+
 
 
