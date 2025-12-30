@@ -16,7 +16,7 @@ function init( ) {
 const añadirVoluntario = ( ) => {  
     let nombre
     let dinero
-    let masVoluntarios = true
+    let masVoluntarios
     
     do {
         nombre = prompt( "¿Quién prestó dinero?" )
@@ -50,26 +50,24 @@ const añadirVoluntario = ( ) => {
 
     
     const parteDeCadaUsuario = ( ) => {
-        let partes = gastoTotal / participantes
-        let partesFix = partes.toFixed(2)
-        alert( `Cada uno gastó $${ partesFix }` )
-        console.log(`Por persona $${partesFix}`);
+        let partes = (gastoTotal / participantes).toFixed(2)
+        alert( `Cada uno gastó $${ partes }` )
+        console.log(`Por persona $${ partes }`);
         
         
         for ( i = 0; i < voluntarios.length; i++ ) {
             let voluntario = voluntarios[ i ].nombre
             let gastoVoluntario =  voluntarios[ i ].dinero
-            let parteVoluntario = gastoVoluntario -  partes
-            let parteVolFixed = parteVoluntario.toFixed(2)
+            let parteVoluntario = (gastoVoluntario -  partes).toFixed(2)
 
             if ( parteVoluntario <= 0 ) { 
-                    alert( `${voluntario} debe $${parteVolFixed* -1}` )
+                    alert( `${voluntario} debe $${parteVoluntario* -1}` )
             } else {
-                    alert( `A ${voluntario} le deben $${parteVolFixed}` ) 
+                    alert( `A ${voluntario} le deben $${parteVoluntario}` ) 
         };
 
         console.log(voluntario);
-        console.log(parteVolFixed);
+        console.log(parteVoluntario);
         
     };
     
@@ -79,6 +77,5 @@ const añadirVoluntario = ( ) => {
 init( );
 añadirVoluntario( );
 parteDeCadaUsuario( );
-
 
 
