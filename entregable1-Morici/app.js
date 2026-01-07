@@ -10,8 +10,8 @@ let participantes // el total de personas ( voluntarios incluidos )
 let voluntarios = [ ] // las personas que pusieron el dinero para la compra
 
 function init( ) {
-    gastoTotal = parseInt( prompt('Cuánto dinero gastaron?') )
-    participantes = parseInt( prompt('Cuántos son?') )
+    gastoTotal = parseInt( prompt('Cuánto dinero gastaron?') );
+    participantes = parseInt( prompt('Cuántos son?') );
 
     console.log(`${participantes} personas`);
     console.log(`Total = $${gastoTotal}`);
@@ -56,7 +56,7 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
         let partes = ( gastoTotal / participantes ).toFixed(2)
             alert(`Cada uno gastó $${ partes }`)
             console.log(`Por persona $${ partes }`)
-        
+      
         for ( i = 0; i < voluntarios.length; i++ ) {
             let voluntario = voluntarios[ i ].nombre
             let gastoVoluntario =  voluntarios[ i ].dinero
@@ -77,6 +77,7 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
 init( );
 añadirVoluntario( );
 parteDeCadaUsuario( );
+
 
 
 
