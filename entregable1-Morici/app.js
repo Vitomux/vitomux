@@ -54,7 +54,7 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
     
     const parteDeCadaUsuario = ( ) => {
         let partes = ( gastoTotal / participantes ).toFixed(2)
-        alert( `Cada uno gastó $${ partes }` )
+        partes = isNaN ? alert("Revisa los valores ingresados") : alert(`Cada uno gastó $${ partes }`)
         console.log(`Por persona $${ partes }`);
         
         
@@ -80,3 +80,4 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
 init( );
 añadirVoluntario( );
 parteDeCadaUsuario( );
+
