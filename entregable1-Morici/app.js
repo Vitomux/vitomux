@@ -4,18 +4,16 @@ Situación: en una reunión un grupo de personas sale a comprar (los voluntarios
 y paga el total, eventualmente se calcula entre los voluntarios y los demas 
 como repartirse los gastos.
 */
-
 let gastoTotal // el total de la compra
 let participantes // el total de personas ( voluntarios incluidos )
 let voluntarios = [ ] // las personas que pusieron el dinero para la compra
 
 function init( ) {
-    gastoTotal = parseInt( prompt('Cuánto dinero gastaron?') );
-    participantes = parseInt( prompt('Cuántos son?') );
+    gastoTotal = parseInt( prompt('Cuánto dinero gastaron?') )
+    participantes = parseInt( prompt('Cuántos son?') )
 
     console.log(`${participantes} personas`);
     console.log(`Total = $${gastoTotal}`);
-
 }
 
 
@@ -44,7 +42,7 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
             voluntarios.push({ nombre, dinero });
             masVoluntarios = confirm( '¿Agregar mas voluntarios?' )
         
-        } while ( masVoluntarios && voluntarios.length <= participantes );
+        } while ( masVoluntarios && voluntarios.length < participantes );
         
         console.log( voluntarios )
         return voluntarios;
@@ -54,9 +52,13 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
     
     const parteDeCadaUsuario = ( ) => {
         let partes = ( gastoTotal / participantes ).toFixed(2)
-            alert(`Cada uno gastó $${ partes }`)
-            console.log(`Por persona $${ partes }`)
-      
+        if ( !partes || isNaN(partes) ) { 
+            alert(`No hay partes declaradas`)
+        } else {
+        alert( `Cada uno gastó $${ partes }` )
+        console.log(`Por persona son $${ partes }`);
+        }
+        
         for ( i = 0; i < voluntarios.length; i++ ) {
             let voluntario = voluntarios[ i ].nombre
             let gastoVoluntario =  voluntarios[ i ].dinero
@@ -64,19 +66,20 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
 
             if ( parteVoluntario <= 0 ) { 
                     alert( `${ voluntario } debe $${ parteVoluntario* -1 }` )
+                    console.log( `${ voluntario } debe $${ parteVoluntario* -1 }`)
             } else {
-                    alert( `A ${ voluntario } le deben $${ parteVoluntario }` ) 
+                    alert( `A ${ voluntario } le deben $${ parteVoluntario }` )
+                    console.log( `${ voluntario } tiene que cobrarse $${ parteVoluntario }` )
         };
 
-        console.log(voluntario);
-        console.log(parteVoluntario);
     };
+    
 }
-
 
 init( );
 añadirVoluntario( );
 parteDeCadaUsuario( );
+
 
 
 
