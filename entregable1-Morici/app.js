@@ -51,7 +51,7 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
         gastoTotal += voluntario.dinero
       });
           console.log(`${participantes} personas`);
-    console.log(`Total = $${gastoTotal}`);
+          console.log(`Total = $${gastoTotal}`);
       
         let partes = ( gastoTotal / participantes ).toFixed(2)
         if ( !partes || isNaN(partes) ) { 
@@ -81,6 +81,7 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
 init();
 añadirVoluntario( );
 parteDeCadaUsuario( );
+
 
 
 
