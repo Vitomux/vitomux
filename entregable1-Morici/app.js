@@ -9,12 +9,9 @@ let participantes // el total de personas ( voluntarios incluidos )
 let voluntarios = [ ] // las personas que pusieron el dinero para la compra
 
 function init( ) {
-    gastoTotal = parseInt( prompt('Cuánto dinero gastaron?') )
     participantes = parseInt( prompt('Cuántos son?') )
-
     console.log(`${participantes} personas`);
-    console.log(`Total = $${gastoTotal}`);
-}
+};
 
 
 const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {  
@@ -42,7 +39,7 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
             voluntarios.push({ nombre, dinero });
             masVoluntarios = confirm( '¿Agregar mas voluntarios?' )
         
-        } while ( masVoluntarios && voluntarios.length < participantes );
+       } while ( masVoluntarios);
         
         console.log( voluntarios )
         return voluntarios;
@@ -51,6 +48,13 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
 
     
     const parteDeCadaUsuario = ( ) => {
+     let gastoTotal = 0
+      voluntarios.forEach(voluntario =>{
+        gastoTotal += voluntario.dinero
+      });
+          console.log(`${participantes} personas`);
+    console.log(`Total = $${gastoTotal}`);
+      
         let partes = ( gastoTotal / participantes ).toFixed(2)
         if ( !partes || isNaN(partes) ) { 
             alert(`No hay partes declaradas`)
@@ -76,9 +80,10 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
     
 }
 
-init( );
+init();
 añadirVoluntario( );
 parteDeCadaUsuario( );
+
 
 
 
