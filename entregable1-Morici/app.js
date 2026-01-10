@@ -4,8 +4,6 @@ Situación: en una reunión un grupo de personas sale a comprar (los voluntarios
 y paga el total, eventualmente se calcula entre los voluntarios y los demas 
 como repartirse los gastos.
 */
-let gastoTotal // el total de la compra
-let participantes // el total de personas ( voluntarios incluidos )
 let voluntarios = [ ] // las personas que pusieron el dinero para la compra
 
 function init( ) {
@@ -83,6 +81,7 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
 init();
 añadirVoluntario( );
 parteDeCadaUsuario( );
+
 
 
 
