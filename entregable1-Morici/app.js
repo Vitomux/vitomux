@@ -39,7 +39,7 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
             voluntarios.push({ nombre, dinero });
             masVoluntarios = confirm( '¿Agregar mas voluntarios?' )
         
-       } while ( masVoluntarios);
+       } while ( masVoluntarios && voluntarios.length < participantes );
         
         console.log( voluntarios )
         return voluntarios;
@@ -83,6 +83,7 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
 init();
 añadirVoluntario( );
 parteDeCadaUsuario( );
+
 
 
 
