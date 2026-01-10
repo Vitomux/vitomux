@@ -50,7 +50,7 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
       voluntarios.forEach(voluntario =>{
         gastoTotal += voluntario.dinero
       });
-          alert( `El total es de $${ gastoTotal }` )
+          alert( `El total es de $${ gastoTotal }` );
           console.log(`${participantes} personas`);
           console.log(`Total = $${gastoTotal}`);
       
@@ -82,6 +82,7 @@ const añadirVoluntario = ( nombre, dinero, masVoluntarios ) => {
 init();
 añadirVoluntario( );
 parteDeCadaUsuario( );
+
 
 
 
