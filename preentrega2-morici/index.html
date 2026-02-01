@@ -18,7 +18,7 @@
           <div class="h-[0.5px] bg-[#00A18E] -mt-8"></div>
           <div class="mb-[1.1rem] flex flex-row gap-4]">
             <input class="text-lg bg-white mb-4 w-full px-[0.8rem] rounded-sm capitalize" type="text" id="nombre" placeholder="Nombre">
-            <input class="text-lg bg-white mb-4 w-full px-[0.8rem] rounded-sm flex text-end" type="text" id="dineroVol" placeholder="$00.00">
+            <input class="text-lg bg-white mb-4 w-full px-[0.8rem] rounded-sm flex text-end" type="text" id="dinero" placeholder="$00.00">
           </div>
           <button class="transition-all duration-200 hover:text-[#000] hover:bg-[#e9f9f3] cursor-pointer">Sumar Voluntarios</button>
         </div>
@@ -27,6 +27,7 @@
           <div class="h-[0.5px] bg-[#00A18E]"></div>
           <div class="flex flex-col items-center overflow-hidden">
             <input type="text" id="personas" placeholder="0" class="text-6xl text-center my-4 w-full bg-transparent outline-none border-none focus:ring-0">
+            <img src="okey_.svg" id="succesImg" hidden />
           </div>
           <button class="transition-all duration-200 hover:text-[#000] hover:bg-[#e9f9f3] cursor-pointer">Confirmar</button>
         </div>
@@ -63,8 +64,10 @@
           <button class="mb-4 transition-all duration-200 hover:text-[#000] hover:bg-[#e9f9f3] cursor-pointer">Guardar</button>
         </div>
       </div>
-      <div class="cards max-w-[25%]">
+      <div class="cards max-w-[25%] justify-between" >
         <h1>Tu Historial</h1>
+        <div class="cardsHist flex flex-col" id="historial"></div>
+        <button class="transition-all duration-200  hover:text-[#000] hover:bg-[#e9f9f3]  cursor-pointer">Borrar historial</button>
       </div>
       <div id="voluntarios"></div>
     </section>
