@@ -131,18 +131,27 @@ function save( ){
     let savedTotal = localStorage.getItem('Total')
     let savedPersonas = localStorage.getItem('Personas')
     let savedParte = localStorage.getItem('Por persona')
-    let savedVoluntarios = localStorage.getItem('Voluntarios')
+    let savedVoluntarios = JSON.parse(localStorage.getItem('Voluntarios'))
 
     historial.innerHTML += `
-        <div class="p-4 justify-between">
-            <p><strong>${ savedDay }</strong> a las <strong>${savedHour}</strong></p>
-            <p><strong>Gasto total</strong> $${ savedTotal }</p>
-            <p><strong>Personas</strong> ${ savedPersonas }</p>
-            <p><strong>cada uno gastó </strong>$${ savedParte }</p>
-            <p>${ savedVoluntarios }
+    <div class="p-4 justify-between">
+        <p><strong>${ savedDay }</strong> a las <strong>${savedHour}</strong></p>
+        <p><strong>Gasto total</strong> $${ savedTotal }</p>
+        <p><strong>Personas</strong> ${ savedPersonas }</p>
+        <p><strong>cada uno gastó </strong>$${ savedParte }</p>
+        
+        <strong>Voluntarios:</strong>
+        <div class="p-4">
+            <ul>
+                ${ savedVoluntarios.map( v => `
+                    <li>
+                        <strong>${v.nombre}:</strong> $${v.dinero - savedParte}
+                    </li>`).join( ' ' ) }
+            </ul>
         </div>
-        <div class="h-[0.5px] bg-[#00A18E]"></div>
-    `
+    </div>
+    <div class="h-[0.5px] bg-[#00A18E]"></div>
+`
 
     restart( )
 }
